@@ -5,11 +5,7 @@
       var username = getParameterByName('username', url)
       var password = getParameterByName('password', url)
       
-      if (username == 'shubhadeep' && password == 'testpassword') {
-        alert('success')
-      } else {
-        alert('failure')
-      }
+      window.location = username == 'shubhadeep' && password == 'testpassword' ? "success.json" : "failure.json";
       
       function getParameterByName(name, url) {
           name = name.replace(/[\[\]]/g, "\\$&");
