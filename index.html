@@ -1,8 +1,24 @@
 <html>
   <head>
     <script type="text/javascript">
-      alert(window.location.href)
-      //window.location = "http://google.com";
+      var url = window.location.href
+      var username = getParameterByName('username', url)
+      var password = getParameterByName('password', url)
+      
+      if (username == 'shubhadeep' && password == 'testpassword') {
+        alert('success')
+      } else {
+        alert('failure')
+      }
+      
+      function getParameterByName(name, url) {
+          name = name.replace(/[\[\]]/g, "\\$&");
+          var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+              results = regex.exec(url);
+          if (!results) return null;
+          if (!results[2]) return '';
+          return decodeURIComponent(results[2].replace(/\+/g, " "));
+      }
     </script>
   </head>
 </html>
